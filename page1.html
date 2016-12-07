@@ -1,0 +1,76 @@
+<!-- DOCTYPE HTML -->
+<html>
+<head>
+    <title>First ReactJS test</title>
+    <style>
+        body {
+            background-color: #ffb3b3;
+            padding: 20px;
+            margin: 0;
+            font-family: "Trebuchet MS";
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="content"></div>
+<script src="https://fb.me/react-0.14.6.js"></script>
+<script src="https://fb.me/react-dom-0.14.6.js"></script>
+<script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+<script type="text/jsx">
+    /*React code here*/
+
+    var DATA = {
+        name: 'Hot Lemon',
+        forTheLol: '#LesCitronsChauds',
+        imgURL: 'http://lorempixel.com/100/100/',
+        hobbyList: ['musique', 'écriture', 'code']
+    }
+
+    var App = React.createClass({
+        render: function(){
+            return (
+                    <div>
+                        <Profile
+                                name={this.props.profileData.name}
+                                forTheLol={this.props.profileData.forTheLol}
+                                imgURL={this.props.profileData.imgURL}/>
+                        <Hobbies
+                                hobbyList={this.props.profileData.hobbyList} />
+                    </div>
+            );
+        }
+    });
+
+    var Profile = React.createClass({
+        render: function(){
+            return (
+                    <div>
+                        <h3>{this.props.name}</h3>
+                        <h2>{this.props.forTheLol}</h2>
+                        <img src={this.props.imgURL} />
+                    </div>
+            );
+        }
+    });
+
+    var Hobbies = React.createClass({
+        render: function(){
+            var hobbies = this.props.hobbyList.map(function(hobby, index){
+                return (<li key={index}>{hobby}</li>);
+            });
+
+            return (
+                    <div>
+                        <h5>Mes passions :</h5>
+                            {hobbies}
+                    </div>
+            );
+        }
+    });
+
+    ReactDOM.render(<App profileData={DATA} />, document.getElementById('content'));
+
+</script>
+</body>
+</html>
