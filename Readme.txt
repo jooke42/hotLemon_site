@@ -1,5 +1,5 @@
-==== Projet Hot Lemon ====
-"Votre journal local"
+﻿==== Projet Hot Lemon ====
+"Votre journal local 2"
 
 == v 1.0 ==
 Auteure : Alizée Perrin
