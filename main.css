@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color: #000000;
+	font-family: "Trebuchet MS";
+	}	
+		
+#page{
+	color: white;
+}
+
+#navbar{
+	text-align: left;
+}
+
+#content{
+	background-color: violet;
+	padding: 20px;
+	margin: 0;
+	font-family: "Arial";
+	color: white;
+	text-align: center;
+}
+
+
+		
+	
