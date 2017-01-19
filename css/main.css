@@ -1,0 +1,101 @@
+/* ============================== */
+/* ======= NAVIGATION BAR ======= */
+/* ============================== */
+
+.navbar{
+	font-family: "Arial";
+	font-size: 16px;
+}
+
+.navbar #logo{
+	position: fixed;
+	float: left;
+	left: 100px;
+	padding:6px;
+}
+
+.navbar #buttons{
+	position:fixed;
+	padding:8px;
+	left: 250px;
+	display: block;
+}
+
+.navbar ul{
+	list-style-type: none;
+	overflow: hidden;
+}
+
+.navbar li{
+	float:left;
+}
+
+.navbar li a{
+	display: block;
+	padding: 15px;
+	color: black;
+	text-align:center;
+	text-decoration: none;
+}
+
+.navbar li a:hover {
+	color:red;
+	background-color: yellow;
+}
+
+
+/* ============================== */
+/* ========== SIDE BAR ========== */
+/* ============================== */
+
+.bm-burger-button {
+  position: fixed;
+  width: 22px;
+  height: 20px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  font-size: 16px;
+  color: white;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: white;
+  padding: 0.8em;
+}
+
+.bm-item-list a{
+  color: white;
+  text-decoration: none;
+  font-family: "Trebuchet MS";
+  padding : 10px;
+  margin:30px;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+
