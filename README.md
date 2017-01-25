@@ -1,4 +1,4 @@
-﻿#Projet Hot Lemon
+﻿#WebApp Hot Lemon
 
 Votre journal local participatif.
 
@@ -24,17 +24,17 @@ Date : 19/01/2017
 
 `npm install -g babel-cli`
 
-4.Dans le <strong>répertoire du projet</strong> :
+4.Se placer dans le <strong>répertoire du projet</strong> et taper :
 
 `npm install webpack --save`
 
 `npm install webpack-dev-server --save`
 
- 
+
 `npm install react --save`
 
 `npm install react-dom --save`
-	
+
 
 `npm install babel-core`
 	

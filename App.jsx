@@ -22,7 +22,6 @@ class App extends React.Component {
 class NavBar extends React.Component {
    render() {
       return (
-	  	<div>
 			<div className = "navbar">
 				<div id = "logo">
 					<a href = "http://eelslap.com/"><img src="img\HotLemon_Logo.png"/></a>
@@ -38,7 +37,7 @@ class NavBar extends React.Component {
 					</ul>
 				</div>			
 			</div>
-		</div>
+		
       );
    }
 }
