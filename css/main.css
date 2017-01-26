@@ -1,3 +1,13 @@
+body{
+	background-color: #00cc66;
+}
+
+#container{
+	position:absolute;
+	top:0;
+	left:0;
+}
+
 /* ============================== */
 /* ======= NAVIGATION BAR ======= */
 /* ============================== */
@@ -11,13 +21,14 @@
 	position: fixed;
 	float: left;
 	left: 100px;
-	padding:6px;
+	padding:16px;
+	-webkit-transform: rotate(-5deg);
 }
 
 .navbar #buttons{
 	position:fixed;
 	padding:8px;
-	left: 250px;
+	left: 210px;
 	display: block;
 }
 
@@ -33,14 +44,13 @@
 .navbar li a{
 	display: block;
 	padding: 15px;
-	color: black;
+	color: white;
 	text-align:center;
 	text-decoration: none;
 }
 
 .navbar li a:hover {
-	color:red;
-	background-color: yellow;
+	color:green;
 }
 
 
@@ -49,53 +59,49 @@
 /* ============================== */
 
 .bm-burger-button {
-  position: fixed;
-  width: 22px;
-  height: 20px;
-  left: 36px;
-  top: 36px;
+	position: fixed;
+	width: 22px;
+	height: 20px;
+	left: 25px;
+	top: 36px;
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
+	background: white;
 }
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
+	height: 24px;
+	width: 24px;
 }
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: #bdc3c7;
+	background: #bdc3c7;
 }
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
-  font-size: 16px;
-  color: white;
+	background: #373a47;
+	font-size: 16px;
+	color: white;
+	opacity: 0.9;
 }
 
 /* Wrapper for item list */
 .bm-item-list {
-  color: white;
-  padding: 0.8em;
+	color: white;
 }
 
 .bm-item-list a{
-  color: white;
-  text-decoration: none;
-  font-family: "Trebuchet MS";
-  padding : 10px;
-  margin:30px;
+	color: white;
+	text-decoration: none;
+	font-family: "Trebuchet MS";
+	padding :20px;
 }
 
-/* Styling of overlay */
-.bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
+.bm-item-list img{
+	padding:20px;
 }
-
-
