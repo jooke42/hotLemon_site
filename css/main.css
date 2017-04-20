@@ -1,12 +1,26 @@
+html{
+	height:100%;
+}
+
 body{
-	background-color: #00cc66;
+	height: 100%;
+    margin: 0;
+	background: #b3daff; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#b3daff, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#b3daff, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#b3daff, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#b3daff, white); /* Standard syntax (must be last) */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #container{
 	position:absolute;
+	width:100%;
 	top:0;
 	left:0;
 }
+
 
 /* ============================== */
 /* ======= NAVIGATION BAR ======= */
@@ -14,27 +28,20 @@ body{
 
 .navbar{
 	font-family: "Arial";
-	font-size: 16px;
+	font-size: 12px;
+	font-weight : bold;
 }
 
-.navbar #logo{
-	position: fixed;
-	float: left;
-	left: 100px;
-	padding:16px;
-	-webkit-transform: rotate(-5deg);
+.navbar #buttons{	
+	position:relative;
 }
 
-.navbar #buttons{
-	position:fixed;
-	padding:8px;
-	left: 210px;
-	display: block;
-}
-
-.navbar ul{
+.navbar ul{	
 	list-style-type: none;
 	overflow: hidden;
+	background-color: #fff2cc;
+	margin:auto;
+	padding:15px;
 }
 
 .navbar li{
@@ -44,13 +51,20 @@ body{
 .navbar li a{
 	display: block;
 	padding: 15px;
-	color: white;
+	color: black;
 	text-align:center;
 	text-decoration: none;
 }
 
 .navbar li a:hover {
-	color:green;
+	color:#009933;
+}
+
+.navbar img{
+	position:relative;
+	display:block;
+	margin:0 auto;
+	padding: 25px;
 }
 
 
@@ -84,10 +98,11 @@ body{
 
 /* General sidebar styles */
 .bm-menu {
+	position:relative;
 	background: #373a47;
 	font-size: 16px;
 	color: white;
-	opacity: 0.9;
+	opacity: 0.8;
 }
 
 /* Wrapper for item list */
@@ -99,9 +114,37 @@ body{
 	color: white;
 	text-decoration: none;
 	font-family: "Trebuchet MS";
-	padding :20px;
+	padding :15px;
 }
 
 .bm-item-list img{
 	padding:20px;
+}
+
+
+/* ============================== */
+/* ============ FEED ============ */
+/* ============================== */
+
+.feed{
+	width: 80%;
+	display:block;
+	margin: auto;
+	padding:15px;
+	text-align:center;
+}
+
+
+/* ============================== */
+/* =========== BLOCKS =========== */
+/* ============================== */
+
+.bloc{
+	background-color: #ffe6f3;
+	padding:10px;
+}
+
+.bloc h2{
+	font-family: "Trebuchet MS";
+	color: #009933;
 }
