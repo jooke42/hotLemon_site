@@ -14,17 +14,14 @@ body{
     background-attachment: fixed;
 }
 
-#container{
-	position:absolute;
-	width:100%;
-	top:0;
-	left:0;
-}
 
 
 /* ============================== */
 /* ======= NAVIGATION BAR ======= */
 /* ============================== */
+.fix{
+	position:fixed;
+}
 
 .navbar{
 	font-family: "Arial";
@@ -127,24 +124,59 @@ body{
 /* ============================== */
 
 .feed{
-	width: 80%;
+	z-index: -1;
 	display:block;
 	margin: auto;
 	padding:15px;
 	text-align:center;
+	border: 3px solid red;
 }
 
 
 /* ============================== */
-/* =========== BLOCKS =========== */
+/* =========== ARTICLE ========== */
 /* ============================== */
 
-.bloc{
+.article{
+	display: inline-block;
+	width: 25%;
+	height: 250px;
 	background-color: #ffe6f3;
 	padding:10px;
+	margin: 10px;
+	overflow:hidden;
 }
 
-.bloc h2{
+.article > h2{
 	font-family: "Trebuchet MS";
-	color: #009933;
+	color: #cc1294;
+}
+
+.article:hover{
+	opacity: 0.4;
+	cursor:pointer;
+}
+
+/* ============================== */
+/* ============ EVENT =========== */
+/* ============================== */
+
+.evenement{
+	display: inline-block;
+	width: 25%;
+	height: 250px;
+	background-color : #d7f4e6;
+	padding:10px;
+	margin: 10px;
+	overflow:hidden;
+}
+
+.evenement > h2{
+	font-family: "Trebuchet MS";
+	color: #00bc61;
+}
+
+.evenement:hover{
+	opacity: 0.4;
+	cursor:pointer;
 }
