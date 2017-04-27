@@ -1,0 +1,182 @@
+html{
+	height:100%;
+}
+
+body{
+	height: 100%;
+    margin: 0;
+	background: #b3daff; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#b3daff, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#b3daff, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#b3daff, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#b3daff, white); /* Standard syntax (must be last) */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+
+/* ============================== */
+/* ======= NAVIGATION BAR ======= */
+/* ============================== */
+.fix{
+	position:fixed;
+}
+
+.navbar{
+	font-family: "Arial";
+	font-size: 12px;
+	font-weight : bold;
+}
+
+.navbar #buttons{	
+	position:relative;
+}
+
+.navbar ul{	
+	list-style-type: none;
+	overflow: hidden;
+	background-color: #fff2cc;
+	margin:auto;
+	padding:15px;
+}
+
+.navbar li{
+	float:left;
+}
+
+.navbar li a{
+	display: block;
+	padding: 15px;
+	color: black;
+	text-align:center;
+	text-decoration: none;
+}
+
+.navbar li a:hover {
+	color:#009933;
+}
+
+.navbar img{
+	position:relative;
+	display:block;
+	margin:0 auto;
+	padding: 25px;
+}
+
+
+/* ============================== */
+/* ========== SIDE BAR ========== */
+/* ============================== */
+
+.bm-burger-button {
+	position: fixed;
+	width: 22px;
+	height: 20px;
+	left: 25px;
+	top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+	background: white;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+	height: 24px;
+	width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+	background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+	position:relative;
+	background: #373a47;
+	font-size: 16px;
+	color: white;
+	opacity: 0.8;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+	color: white;
+}
+
+.bm-item-list a{
+	color: white;
+	text-decoration: none;
+	font-family: "Trebuchet MS";
+	padding :15px;
+}
+
+.bm-item-list img{
+	padding:20px;
+}
+
+
+/* ============================== */
+/* ============ FEED ============ */
+/* ============================== */
+
+.feed{
+	z-index: -1;
+	display:block;
+	margin: auto;
+	padding:15px;
+	text-align:center;
+	border: 3px solid red;
+}
+
+
+/* ============================== */
+/* =========== ARTICLE ========== */
+/* ============================== */
+
+.article{
+	display: inline-block;
+	width: 25%;
+	height: 250px;
+	background-color: #ffe6f3;
+	padding:10px;
+	margin: 10px;
+	overflow:hidden;
+}
+
+.article > h2{
+	font-family: "Trebuchet MS";
+	color: #cc1294;
+}
+
+.article:hover{
+	opacity: 0.4;
+	cursor:pointer;
+}
+
+/* ============================== */
+/* ============ EVENT =========== */
+/* ============================== */
+
+.evenement{
+	display: inline-block;
+	width: 25%;
+	height: 250px;
+	background-color : #d7f4e6;
+	padding:10px;
+	margin: 10px;
+	overflow:hidden;
+}
+
+.evenement > h2{
+	font-family: "Trebuchet MS";
+	color: #00bc61;
+}
+
+.evenement:hover{
+	opacity: 0.4;
+	cursor:pointer;
+}

@@ -5,12 +5,10 @@ var SideBar = require('react-burger-menu').slide;
 class App extends React.Component {
    render() {
       return (
-		<div id = "grad">
-			<div id = "container">		
-				<NavBar/>
-				<Feed/>
-			</div>
-        </div>
+		<div id = "grad">	
+			<NavBar/>
+			<Feed/>
+		</div>
       );
    }
 }
@@ -61,21 +59,43 @@ class Feed extends React.Component{
 	render() {
 		return (
 			<div className = "feed">
-				<Bloc/>
+				<Article/>
+				<Article/>
+				<Evenement/>
+				<Evenement/>
+				<Article/>
+				<Article/>	
+				<Evenement/>
+				<Article/>
+				<Article/>					
 			</div>
 		);
 	}
 }
 
-class Bloc extends React.Component {
+class Article extends React.Component {
    render() {
       return (
-		<div className = "bloc">
+		<div className = "article">
 			<h2>Title sample</h2>
 			<p>C’est dans un écosystème appartenant au Mont Kaputar situé dans la région du New South Wales en Australie que vient d’être tout récemment découvert une espèce tout à fait surprenante de limace. Un invertébré de couleur rose et de surcroit… fluorescent! Michael Murphy, un ranger du National Parks and Wildlife Service exerçant ses fonctions dans la région de la Nouvelle-Galles du Sud en Australie, vient d’être l’un des premiers témoins de la vie d’une forme tout à fait particulière de limace encore jamais observée dans le passé. C’est sur les hauteurs du Mont Kaputar, là où la forêt alpine semble abriter des espèces encore inconnues de tous, que l’homme vient en effet de faire la découverte d’une limace géante entièrement rose et fluorescente.</p>
 		</div>
       );
    }
+}
+
+class Evenement extends React.Component {
+	render() {
+		return (
+			<div className = "evenement">
+				<h2>Moules frites à volonté</h2>
+				<h4>Vaucresson City Center</h4>
+				<h5>15/05/2017 à 20:30</h5>
+				
+				<p> Benji le Ravioli Dupont-Aignant vous invite à déguster des moules frites à un délicieux buffet concocté par la maman de Stephen. Des activité annexes sont prévues, telles que strip-tease et cracheurs de flammes.</p>
+			</div>
+		);
+	}
 }
 
 export default App;
