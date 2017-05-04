@@ -15,16 +15,12 @@ body{
 }
 
 
-
 /* ============================== */
 /* ======= NAVIGATION BAR ======= */
 /* ============================== */
-.fix{
-	position:fixed;
-}
 
 .navbar{
-	font-family: "Arial";
+	font-family: "Trebuchet MS";
 	font-size: 12px;
 	font-weight : bold;
 }
@@ -38,7 +34,6 @@ body{
 	overflow: hidden;
 	background-color: #fff2cc;
 	margin:auto;
-	padding:15px;
 }
 
 .navbar li{
@@ -47,7 +42,7 @@ body{
 
 .navbar li a{
 	display: block;
-	padding: 15px;
+	margin: 25px;
 	color: black;
 	text-align:center;
 	text-decoration: none;
@@ -66,80 +61,27 @@ body{
 
 
 /* ============================== */
-/* ========== SIDE BAR ========== */
-/* ============================== */
-
-.bm-burger-button {
-	position: fixed;
-	width: 22px;
-	height: 20px;
-	left: 25px;
-	top: 36px;
-}
-
-/* Color/shape of burger icon bars */
-.bm-burger-bars {
-	background: white;
-}
-
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-	height: 24px;
-	width: 24px;
-}
-
-/* Color/shape of close button cross */
-.bm-cross {
-	background: #bdc3c7;
-}
-
-/* General sidebar styles */
-.bm-menu {
-	position:relative;
-	background: #373a47;
-	font-size: 16px;
-	color: white;
-	opacity: 0.8;
-}
-
-/* Wrapper for item list */
-.bm-item-list {
-	color: white;
-}
-
-.bm-item-list a{
-	color: white;
-	text-decoration: none;
-	font-family: "Trebuchet MS";
-	padding :15px;
-}
-
-.bm-item-list img{
-	padding:20px;
-}
-
-
-/* ============================== */
 /* ============ FEED ============ */
 /* ============================== */
+/* Container des différents blocs */
 
 .feed{
 	z-index: -1;
+
 	display:block;
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
 	padding:15px;
 	text-align:center;
-	border: 3px solid red;
 }
 
 
-/* ============================== */
-/* =========== ARTICLE ========== */
-/* ============================== */
+/* =========== BLOC ARTICLE ========== */
 
 .article{
-	display: inline-block;
-	width: 25%;
+	font-family: "Arial";
+	float: left;
+	width:300px;
 	height: 250px;
 	background-color: #ffe6f3;
 	padding:10px;
@@ -153,17 +95,18 @@ body{
 }
 
 .article:hover{
-	opacity: 0.4;
+	opacity:0.6;
 	cursor:pointer;
+	transition: all 1s;
 }
 
-/* ============================== */
-/* ============ EVENT =========== */
-/* ============================== */
+
+/* ============ BLOC EVENT =========== */
 
 .evenement{
-	display: inline-block;
-	width: 25%;
+	float: left;
+	font-family: "Arial";
+	width:300px;
 	height: 250px;
 	background-color : #d7f4e6;
 	padding:10px;
@@ -177,6 +120,68 @@ body{
 }
 
 .evenement:hover{
-	opacity: 0.4;
+	opacity:0.6;
 	cursor:pointer;
+	transition: all 1s;
 }
+
+
+/* =========== BLOC SONDAGE ========== */
+
+.sondage{
+	float: left;
+	font-family: "Trebuchet MS";
+	width:300px;
+	height: 250px;
+	background-color: #ffffb3;
+	padding : 10px;
+	margin: 10px;
+	overflow : auto;		
+	text-decoration:none;
+}
+
+.sondage > h2{
+	color: #ffcc66;
+}
+
+#button_sondage {
+	border: 2px solid;
+    border-color: black;	
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#button_sondage:hover{
+	background-color: #99ffbb;
+	cursor: pointer;
+}
+
+/* Pour afficher des boutons mini-citron */
+#button_sondage2 {
+	background:url("mini_citron.png") no-repeat;
+	width:100px;
+	height: 57px;
+    cursor:pointer;
+    border:none;
+    display: inline-block;
+}
+
+/* ============================== */
+/* === CREATION D'UN ARTICLE ==== */
+/* ============================== */
+
+/* ============================== */
+/* ===== CREATION D'UN EVENT ==== */
+/* ============================== */
+
+/* ============================== */
+/* === CREATION D'UN SONDAGE ==== */
+/* ============================== */
+
+
+
