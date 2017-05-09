@@ -5,19 +5,23 @@ html{
 body{
 	height: 100%;
     margin: 0;
-	background: #b3daff; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#b3daff, white); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#b3daff, white); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#b3daff, white); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#b3daff, white); /* Standard syntax (must be last) */
+	background: #00a651; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#00a651, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#00a651, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#00a651, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#00a651, white); /* Standard syntax (must be last) */
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
 #footer {
-	background:#99e699;
+	background:#ffcc80;
+	font-family: "Trebuchet MS";
+	color: white;
+	text-align : center;	
 	width:100%;
-	height:55px;
+	padding:10px;
+	height:25px;
 	position:fixed;
 	bottom:0;
 	left:0;
@@ -40,7 +44,7 @@ body{
 .navbar ul{	
 	list-style-type: none;
 	overflow: hidden;
-	background-color: #fff2cc;
+	background-color: #ffff99;
 	margin:auto;
 }
 
@@ -56,7 +60,7 @@ body{
 	text-decoration: none;
 }
 
-.navbar li a:hover {
+.navbar li a:hover{
 	color:#009933;
 }
 
@@ -76,12 +80,22 @@ body{
 
 .feed{
 	z-index: -1;
-
 	display:block;
 	margin-left: auto;
 	margin-right: auto;
 	padding:15px;
 	text-align:center;
+}
+
+.feed > h2{
+	font-family:"Trebuchet MS";
+	display: block;
+	color: white;
+	border: 1px solid;
+}
+#test
+{
+    background:url('chat_default.jpeg');
 }
 
 
@@ -154,12 +168,12 @@ body{
 }
 
 #button_sondage {
+	display: block;
 	border: 2px solid;
     border-color: black;	
     padding: 10px 25px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
@@ -171,6 +185,7 @@ body{
 }
 
 /* Pour afficher des boutons mini-citron */
+/* ne marche pas pour le moment */
 #button_sondage2 {
 	background:url("mini_citron.png") no-repeat;
 	width:100px;
@@ -191,13 +206,14 @@ body{
 	width: 400px;
 	margin: auto;
 	padding: 10px;
-	background-color: #b3b3ff;
+	background-color: #00a651;
 	font-family: "Trebuchet MS";
 	border: solid 2px black;
 }
 
 .createarticle > h2 {
 	text-align: center;
+	color: white;
 }
 
 .createarticle > textarea {
@@ -222,6 +238,42 @@ body{
 /* ============================== */
 /* ===== CREATION D'UN EVENT ==== */
 /* ============================== */
+
+.createevent {
+	display: block;
+	position: absolute;
+	left: 200px;
+	width: 400px;
+	margin: auto;
+	padding: 10px;
+	background-color: #00a651;
+	font-family: "Trebuchet MS";
+	border: solid 2px black;
+}
+
+.createevent > h2 {
+	text-align: center;
+	color: white;
+}
+
+.createevent > textarea {
+	font-family:"Trebuchet MS";
+	max-width: 300px;
+}
+
+.createevent #sendevent {
+	display: inline-block;
+	width: 50%;
+	background-color:white;
+	text-align: center;
+	color: black;	
+}
+
+.createevent #sendevent:hover {
+	cursor: pointer;
+	background-color: yellow;
+}
+
 
 /* ============================== */
 /* === CREATION D'UN SONDAGE ==== */

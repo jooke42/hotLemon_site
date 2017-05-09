@@ -1,10 +1,10 @@
-﻿#WebApp Hot Lemon
+﻿# WebApp Hot Lemon
 
 Votre journal local participatif.
 
 
 
-##Informations
+## Informations
 
 Version : 3.0
 
@@ -12,7 +12,7 @@ Auteure : Alizée Perrin
 
 Date : 19/01/2017
 
-##Pré-requis
+## Pré-requis
 
 1.Télécharger le répertoire.
 
@@ -47,7 +47,7 @@ Date : 19/01/2017
 
 `npm install react-burger-menu --save`
 
-##Visualiser l'app
+## Visualiser l'app
 
 Dans le répertoire du projet :
 
