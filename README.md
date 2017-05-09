@@ -45,7 +45,7 @@ Date : 19/01/2017
 `npm install babel-preset-es2015`
 
 
-'npm install react-burger-menu --save'
+`npm install react-burger-menu --save`
 
 ##Visualiser l'app
 
