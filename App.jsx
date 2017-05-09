@@ -8,6 +8,7 @@ class App extends React.Component {
 		<div id = "grad">	
 			<NavBar/>
 			<Feed/>
+			<CreateArticle/>
 		</div>
       );
    }
@@ -90,6 +91,24 @@ class Sondage extends React.Component {
 				<p id = "button_sondage"> Réponse2 </p>
 				<h6> XXXX personnes ont répondu !</h6>
 				<h4> <a href="#"> Voir le sondage </a></h4>
+			</div>
+		);
+	}
+}
+
+class CreateArticle extends React.Component {
+	render() {
+		return (
+			<div className = "createarticle">
+				<h2> Nouvel article </h2>	
+				<textarea rows="2" cols="50" placeholder="Titre"></textarea>
+				<textarea rows="2" cols="50" placeholder="Localisation"></textarea>				
+				<button onclick="getLocation()">Try It</button>
+				<div id="mapholder"></div>
+				<textarea rows="6" cols="50" placeholder="Votre texte ici"></textarea>
+				<div id = "sendarticle">
+					<h3> Envoyer </h3>
+				</div>
 			</div>
 		);
 	}

@@ -14,6 +14,14 @@ body{
     background-attachment: fixed;
 }
 
+#footer {
+	background:#99e699;
+	width:100%;
+	height:55px;
+	position:fixed;
+	bottom:0;
+	left:0;
+}
 
 /* ============================== */
 /* ======= NAVIGATION BAR ======= */
@@ -58,6 +66,7 @@ body{
 	margin:0 auto;
 	padding: 25px;
 }
+
 
 
 /* ============================== */
@@ -171,9 +180,44 @@ body{
     display: inline-block;
 }
 
+
 /* ============================== */
 /* === CREATION D'UN ARTICLE ==== */
 /* ============================== */
+
+.createarticle {
+	display: block;
+	position: absolute;
+	width: 400px;
+	margin: auto;
+	padding: 10px;
+	background-color: #b3b3ff;
+	font-family: "Trebuchet MS";
+	border: solid 2px black;
+}
+
+.createarticle > h2 {
+	text-align: center;
+}
+
+.createarticle > textarea {
+	font-family:"Trebuchet MS";
+	max-width: 300px;
+}
+
+.createarticle #sendarticle {
+	display: inline-block;
+	width: 50%;
+	background-color:white;
+	text-align: center;
+	color: black;	
+}
+
+.createarticle #sendarticle:hover {
+	cursor: pointer;
+	background-color: yellow;
+}
+
 
 /* ============================== */
 /* ===== CREATION D'UN EVENT ==== */
