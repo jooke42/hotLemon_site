@@ -7,7 +7,12 @@ class App extends React.Component {
       return (
 		<div id = "grad">	
 			<NavBar/>
-			<Feed/>
+			<Feed/> 
+			{/* (Les commentaires sont comme ça en React JSX)
+			<CreateArticle/>
+			<CreateEvent/>
+			<CreateSondage/>
+			*/}
 		</div>
       );
    }
@@ -37,11 +42,13 @@ class NavBar extends React.Component {
    }
 }
 
+/* Le feed est le container des news */
 class Feed extends React.Component{
 	render() {
 		return (			
 			<div className = "feed">
 			<h2> Titre de l'onglet actuel </h2>
+			<div id = "tags"></div>
 				<Article/>
 				<Article/>
 				<Sondage/>
@@ -56,6 +63,7 @@ class Feed extends React.Component{
 	}
 }
 
+/* Un bloc article cliquable */
 class Article extends React.Component {
    render() {
       return (
@@ -69,6 +77,7 @@ class Article extends React.Component {
    }
 }
 
+/* Un bloc evenement cliquable */
 class Evenement extends React.Component {
 	render() {
 		return (
@@ -82,6 +91,7 @@ class Evenement extends React.Component {
 	}
 }
 
+/* Un bloc sondage cliquable */
 class Sondage extends React.Component {
 	render() {
 		return (
@@ -90,24 +100,30 @@ class Sondage extends React.Component {
 				<p id = "button_sondage"> Réponse1 </p>
 				<p id = "button_sondage"> Réponse2 </p>
 				<h6> XXXX personnes ont répondu !</h6>
-				<h4> <a href="#"> Voir le sondage </a></h4>
+				<h4 href="#"> Voir plus de détails </h4>
 			</div>
 		);
 	}
 }
 
+/* Blocs pour écrir un article, un event ou un sondage, à faire apparaitre 
+quand l'utilisateur clique sur "ecrire quelque chose */
 class CreateArticle extends React.Component {
 	render() {
 		return (
 			<div className = "createarticle">
-				<h2> Nouvel article </h2>	
+				<div id="expandicon"><img src="img\expand_icon.png" height="15" width="15"/></div>
+				<div id = "headercreatearticle"><h2> Nouvel article </h2>	</div>
 				<textarea rows="2" cols="50" placeholder="Titre"></textarea>
 				<textarea rows="2" cols="50" placeholder="Localisation"></textarea>				
-				<button onclick="getLocation()">Try It</button>
+				<button onclick="getLocation()">Carte</button>
 				<div id="mapholder"></div>
+				<div id = "buttoncreatearticle">
+					<h3> Choisir une image... </h3>
+				</div>
 				<textarea rows="6" cols="50" placeholder="Votre texte ici"></textarea>
-				<div id = "sendarticle">
-					<h3> Envoyer </h3>
+				<div id = "buttoncreatearticle">
+					<h3> Poster </h3>
 				</div>
 			</div>
 		);
@@ -118,12 +134,40 @@ class CreateEvent extends React.Component {
 	render() {
 		return (
 			<div className = "createevent">
+				<img src="img\expand_icon.png" height="15" width="15"/>
 				<h2> Nouvel event </h2>	
 				<textarea rows="2" cols="50" placeholder="Titre"></textarea>
-				<textarea rows="2" cols="50" placeholder="Localisation"></textarea>				
-				<button onclick="getLocation()">Try It</button>
+				<textarea rows="2" cols="50" placeholder="Localisation"></textarea>
+						
+				<button onclick="getLocation()">Carte</button>
+				<p> </p>	
 				<div id="mapholder"></div>
 				<textarea rows="6" cols="50" placeholder="Description de l'event"></textarea>
+				<button>Choisir une image...</button>
+				<p> </p>	
+				<div id = "sendevent">
+					<h3> Poster </h3>
+				</div>
+			</div>
+		);
+	}
+}
+
+class CreateSondage extends React.Component {
+	render() {
+		return (
+			<div className = "createsondage">
+				<img src="img\expand_icon.png" height="15" width="15"/>
+				<h2> Nouveau sondage </h2>	
+				<textarea rows="2" cols="50" placeholder="Question"></textarea>
+				<textarea rows="2" cols="50" placeholder="Localisation"></textarea>
+						
+				<button onclick="getLocation()">Carte</button>
+				<p> </p>	
+				<div id="mapholder"></div>
+				<textarea rows="6" cols="50" placeholder="Choisir si on veut créer des sondages uniquement à réponses OUI NON ou des sondages plus complexes"></textarea>
+				<button>Choisir une image...</button>
+				<p> </p>	
 				<div id = "sendevent">
 					<h3> Poster </h3>
 				</div>
@@ -133,3 +177,16 @@ class CreateEvent extends React.Component {
 }
 
 export default App;
+
+{/* Le plus gros reste à faire : 
+
+- la localisation de l'utilisateur en priorité !
+- les requêtes avec le serveur
+- les fonctions permettant de faire interagir les blocs en mode "single-page app"
+- le système de tags pour filtrer les news
+- peut-être une barre de recherche ?
+- la page du compte utilisateur 
+- les annonces si Estelle et Flavien ont le temps de le faire sur Android 
+- un lien vers le PlayStore pour télécharger l'app 
+
+*/ }
