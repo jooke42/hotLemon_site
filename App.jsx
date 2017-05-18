@@ -8,6 +8,7 @@ class App extends React.Component {
 		<div id = "grad">	
 			<NavBar/>
 			<Feed/> 
+			<DisplayArticle/>
 			{/* (Les commentaires sont comme ça en React JSX)
 			<CreateArticle/>
 			<CreateEvent/>
@@ -69,9 +70,10 @@ class Article extends React.Component {
       return (
 		<div className = "article">
 			<h2>Titre de l'article</h2>
-			<p>Description de l'article. L'utilisateur devra cliquer pour voir la suite.</p>
-			<h4> Auteur </h4>
-			<h5> Rayon en km </h5>
+			<p>Description de l'article. L'utilisateur devra cliquer pour voir la suite.</p>		
+			<div id = "footerarticle">
+				<h5> Auteur - Rayon en km </h5>
+			</div>
 		</div>		
       );
    }
@@ -121,6 +123,7 @@ class CreateArticle extends React.Component {
 				<div id = "buttoncreatearticle">
 					<h3> Choisir une image... </h3>
 				</div>
+				<textarea rows="3" cols="50" placeholder="Description de l'article (140 caractères max)"></textarea>
 				<textarea rows="6" cols="50" placeholder="Votre texte ici"></textarea>
 				<div id = "buttoncreatearticle">
 					<h3> Poster </h3>
@@ -176,6 +179,56 @@ class CreateSondage extends React.Component {
 	}
 }
 
+/* Afficher les articles / sondages / events */
+
+class DisplayArticle extends React.Component {
+	render() {
+		return (
+			<div className = "displayarticle">
+				<img src="img\expand_icon.png" height="15" width="15"/>
+				<h2> Title sample </h2>
+				<img src="img\chat2.jpg" />
+				<div id = "headerdisplayarticle"> 
+					<p> à 7 km </p>
+					<h4> Le chat est activement recherché </h4>
+				</div>
+				<p> On connaissait déjà ces animaux pour leur fourberie.
+				Mais on était loin de se douter que leurs pouvoirs
+				prenaient autant d'ampleur.
+				Un humain du nom de John Doe aurait vu hier soir, un 
+				chat roux volant, dans une rue du village, paisible
+				en temps normal.
+				Une très mauvaise nouvelle pour la République Libre des
+				Escargots de Papouasie, qui avait prévu d'envoyer ses 
+				coquilles vides en vacances au Texas en janvier 2038.
+				Le général Croquette a annoncé ce matin qu'il confierait
+				l'enquête à la milice des Chats Sauvages.</p>
+				<a href="#"> Commenter </a>
+			</div>
+		);
+	}
+}
+
+class DisplayEvent extends React.Component {
+	render() {
+		return (
+			<div className = "displayevent">
+				
+			</div>
+		);
+	}
+}
+
+class DisplaySondage extends React.Component {
+	render() {
+		return (
+			<div className = "displaysondage">
+				
+			</div>
+		);
+	}
+}
+
 export default App;
 
 {/* Le plus gros reste à faire : 
@@ -188,5 +241,6 @@ export default App;
 - la page du compte utilisateur 
 - les annonces si Estelle et Flavien ont le temps de le faire sur Android 
 - un lien vers le PlayStore pour télécharger l'app 
+- compatibilité avec d'autres navigateurs
 
 */ }
