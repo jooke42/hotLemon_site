@@ -1,22 +1,89 @@
+
+{/* Le plus gros reste à faire : 
+
+- la localisation de l'utilisateur en priorité !
+- les requêtes avec le serveur
+- les fonctions permettant de faire interagir les blocs en mode "single-page app"
+- le système de tags pour filtrer les news par catégories + 
+bandeau page d'accueil
+- peut-être une barre de recherche ?
+- la page du compte utilisateur 
+- les annonces si Estelle et Flavien ont le temps de le faire sur Android 
+- un lien vers le PlayStore pour télécharger l'app 
+- compatibilité avec d'autres navigateurs
+
+*/ }
+
+
 import React from 'react';
 
 var SideBar = require('react-burger-menu').slide;
 
-class App extends React.Component {
+{/* class App extends React.Component {
    render() {
       return (
 		<div id = "grad">	
 			<NavBar/>
 			<Feed/> 
+			
+			
 			<DisplayArticle/>
-			{/* (Les commentaires sont comme ça en React JSX)
 			<CreateArticle/>
 			<CreateEvent/>
 			<CreateSondage/>
-			*/}
+			
+			
+			
 		</div>
       );
    }
+}
+*/}
+
+class App extends React.Component {
+	constructor(props){
+		super(props);
+		
+		this.state = {
+			title: "Title sample",
+			author: "Author name",
+			body: "Body sample",
+			published_date: "le XX/XX/XXXX",
+			finished_date: "XX/XX/XXXX",
+			vote_for: "Like",
+			vote_against: "Dislike",
+			place: "Default location"
+		}
+	}
+	
+	render() {
+		return(
+			<div id = "grad">
+				<NavBar/>
+				<Feed/>
+				<Article 
+					titleProp = {this.state.title} 
+					authorProp = {this.state.author} 
+					bodyProp = {this.state.body} 
+					published_dateProp = {this.state.published_date}
+					finished_dateProp = {this.state.finished_date} 
+					vote_forProp = {this.state.vote_for} 
+					vote_againstProp = {this.state.vote_against}
+				/>
+				<Evenement
+					titleProp = {this.state.title} 
+					authorProp = {this.state.author} 
+					bodyProp = {this.state.body} 
+					published_dateProp = {this.state.published_date}
+					finished_dateProp = {this.state.finished_date} 
+					vote_forProp = {this.state.vote_for} 
+					vote_againstProp = {this.state.vote_against}
+					placeProp = {this.state.place}
+				/>
+				
+			</div>
+		);
+	}
 }
 
 class NavBar extends React.Component {
@@ -43,6 +110,8 @@ class NavBar extends React.Component {
    }
 }
 
+
+
 /* Le feed est le container des news */
 class Feed extends React.Component{
 	render() {
@@ -50,15 +119,7 @@ class Feed extends React.Component{
 			<div className = "feed">
 			<h2> Titre de l'onglet actuel </h2>
 			<div id = "tags"></div>
-				<Article/>
-				<Article/>
-				<Sondage/>
-				<Evenement/>
-				<Sondage/>
-				<Article/>	
-				<Evenement/>
-				<Article/>
-				<Article/>					
+							
 			</div>
 		);
 	}
@@ -69,10 +130,11 @@ class Article extends React.Component {
    render() {
       return (
 		<div className = "article">
-			<h2>Titre de l'article</h2>
-			<p>Description de l'article. L'utilisateur devra cliquer pour voir la suite.</p>		
+			<h2>{this.props.titleProp}</h2>
+			<h6>{this.props.published_dateProp}</h6>
+			<p>{this.props.bodyProp}</p>		
 			<div id = "footerarticle">
-				<h5> Auteur - Rayon en km </h5>
+				<h5> {this.props.authorProp} {this.props.vote_forProp} {this.props.vote_againstProp}</h5>
 			</div>
 		</div>		
       );
@@ -84,10 +146,13 @@ class Evenement extends React.Component {
 	render() {
 		return (
 			<div className = "evenement">
-				<h2>Nom de l'évènement</h2>
-				<h4>Lieu de l'évènement</h4>
-				<h5>Nom de l'organisateur</h5>
-				<h5>15/05/2017 à 20:30</h5>
+				<h2>{this.props.titleProp}</h2>
+				<h4>{this.props.placeProp}</h4>
+				<h5>{this.props.authorProp}</h5>
+				<h5>{this.props.finished_dateProp}</h5>
+				<div id = "footerarticle">
+				<h5> {this.props.authorProp} {this.props.vote_forProp} {this.props.vote_againstProp}</h5>
+			</div>
 			</div>
 		);
 	}
@@ -203,7 +268,8 @@ class DisplayArticle extends React.Component {
 				coquilles vides en vacances au Texas en janvier 2038.
 				Le général Croquette a annoncé ce matin qu'il confierait
 				l'enquête à la milice des Chats Sauvages.</p>
-				<a href="#"> Commenter </a>
+				<a href="#"> Commenter </a> 
+				<a href="#"> Like </a> <a href="#"> Dislike </a> 
 			</div>
 		);
 	}
@@ -230,17 +296,3 @@ class DisplaySondage extends React.Component {
 }
 
 export default App;
-
-{/* Le plus gros reste à faire : 
-
-- la localisation de l'utilisateur en priorité !
-- les requêtes avec le serveur
-- les fonctions permettant de faire interagir les blocs en mode "single-page app"
-- le système de tags pour filtrer les news
-- peut-être une barre de recherche ?
-- la page du compte utilisateur 
-- les annonces si Estelle et Flavien ont le temps de le faire sur Android 
-- un lien vers le PlayStore pour télécharger l'app 
-- compatibilité avec d'autres navigateurs
-
-*/ }

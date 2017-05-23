@@ -156,7 +156,7 @@ body{
 }
 
 .evenement:hover{
-	opacity:0.6;
+	filter:brightness(110%);
 	cursor:pointer;
 	transition: all 1s;
 }
