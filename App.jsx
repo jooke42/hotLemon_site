@@ -5,7 +5,7 @@
 - les requêtes avec le serveur
 - les fonctions permettant de faire interagir les blocs en mode "single-page app"
 - le système de tags pour filtrer les news par catégories + 
-bandeau page d'accueil
+bandeau page d'accueil 
 - peut-être une barre de recherche ?
 - la page du compte utilisateur 
 - les annonces si Estelle et Flavien ont le temps de le faire sur Android 
@@ -16,8 +16,6 @@ bandeau page d'accueil
 
 
 import React from 'react';
-
-var SideBar = require('react-burger-menu').slide;
 
 {/* class App extends React.Component {
    render() {
@@ -52,7 +50,8 @@ class App extends React.Component {
 			finished_date: "XX/XX/XXXX",
 			vote_for: "Like",
 			vote_against: "Dislike",
-			place: "Default location"
+			place: "Default location",
+			tag: "Catégorie"
 		}
 	}
 	
@@ -60,17 +59,10 @@ class App extends React.Component {
 		return(
 			<div id = "grad">
 				<NavBar/>
-				<Feed/>
-				<Article 
-					titleProp = {this.state.title} 
-					authorProp = {this.state.author} 
-					bodyProp = {this.state.body} 
-					published_dateProp = {this.state.published_date}
-					finished_dateProp = {this.state.finished_date} 
-					vote_forProp = {this.state.vote_for} 
-					vote_againstProp = {this.state.vote_against}
+				<Feed				
+					tagProp = {this.state.tag}
 				/>
-				<Evenement
+				<Article 
 					titleProp = {this.state.title} 
 					authorProp = {this.state.author} 
 					bodyProp = {this.state.body} 
@@ -80,6 +72,12 @@ class App extends React.Component {
 					vote_againstProp = {this.state.vote_against}
 					placeProp = {this.state.place}
 				/>
+				<Article/>
+				<Article/>
+				<Article/>
+				<Article/>
+				<Article/>
+				
 				
 			</div>
 		);
@@ -90,21 +88,23 @@ class NavBar extends React.Component {
    render() {
       return (
 		<div className = "navbar">
-		<div id ="logo">
-			<img src="img\HotLemon_Logo.png"/>
-		</div>
-			<div id = "buttons">
-				<ul>
-					<li><a href="#">TENDANCES</a></li>
-					<li><a href="#">FAVORIS</a></li>
-					<li><a href="#">DERNIERES NEWS</a></li>
-					<li><a href="#">EVENTS PAS LOIN</a></li>
-					<li><a href="#">ANNONCES LOCALES</a></li>
-					<li><a href="#">SONDAGES</a></li>
-					<li><a href="#">COMPTE</a></li>
-					<li><a href="#">ECRIRE QUELQUE CHOSE</a></li>
-				</ul>
-			</div>			
+			<div id ="logo">
+				<img src="img\HotLemon_Logo.png"/>
+			</div>
+			<div id = "barre-boutons">
+				<div id = "buttons">
+					<ul>
+						<li><a href="#">Actualité</a></li>
+						<li><a href="#">Sport</a></li>
+						<li><a href="#">Santé</a></li>
+						<li><a href="#">Culture</a></li>
+						<li><a href="#">écologie</a></li>
+						<li><a href="#">Science</a></li>
+						<li><a href="#">étudiants</a></li>
+						<li><a href="#"><b>écrire</b></a></li>
+					</ul>
+				</div>	
+			</div>
 		</div>
       );
    }
@@ -117,9 +117,7 @@ class Feed extends React.Component{
 	render() {
 		return (			
 			<div className = "feed">
-			<h2> Titre de l'onglet actuel </h2>
-			<div id = "tags"></div>
-							
+				<h2>{this.props.tagProp}</h2> {/*  Catégorie actuelle */}			
 			</div>
 		);
 	}
@@ -131,6 +129,7 @@ class Article extends React.Component {
       return (
 		<div className = "article">
 			<h2>{this.props.titleProp}</h2>
+			<h4>{this.props.placeProp}</h4>
 			<h6>{this.props.published_dateProp}</h6>
 			<p>{this.props.bodyProp}</p>		
 			<div id = "footerarticle">
@@ -141,24 +140,8 @@ class Article extends React.Component {
    }
 }
 
-/* Un bloc evenement cliquable */
-class Evenement extends React.Component {
-	render() {
-		return (
-			<div className = "evenement">
-				<h2>{this.props.titleProp}</h2>
-				<h4>{this.props.placeProp}</h4>
-				<h5>{this.props.authorProp}</h5>
-				<h5>{this.props.finished_dateProp}</h5>
-				<div id = "footerarticle">
-				<h5> {this.props.authorProp} {this.props.vote_forProp} {this.props.vote_againstProp}</h5>
-			</div>
-			</div>
-		);
-	}
-}
-
 /* Un bloc sondage cliquable */
+/* à implémenter côté serveur ! */
 class Sondage extends React.Component {
 	render() {
 		return (
@@ -191,29 +174,6 @@ class CreateArticle extends React.Component {
 				<textarea rows="3" cols="50" placeholder="Description de l'article (140 caractères max)"></textarea>
 				<textarea rows="6" cols="50" placeholder="Votre texte ici"></textarea>
 				<div id = "buttoncreatearticle">
-					<h3> Poster </h3>
-				</div>
-			</div>
-		);
-	}
-}
-
-class CreateEvent extends React.Component {
-	render() {
-		return (
-			<div className = "createevent">
-				<img src="img\expand_icon.png" height="15" width="15"/>
-				<h2> Nouvel event </h2>	
-				<textarea rows="2" cols="50" placeholder="Titre"></textarea>
-				<textarea rows="2" cols="50" placeholder="Localisation"></textarea>
-						
-				<button onclick="getLocation()">Carte</button>
-				<p> </p>	
-				<div id="mapholder"></div>
-				<textarea rows="6" cols="50" placeholder="Description de l'event"></textarea>
-				<button>Choisir une image...</button>
-				<p> </p>	
-				<div id = "sendevent">
 					<h3> Poster </h3>
 				</div>
 			</div>
@@ -275,15 +235,6 @@ class DisplayArticle extends React.Component {
 	}
 }
 
-class DisplayEvent extends React.Component {
-	render() {
-		return (
-			<div className = "displayevent">
-				
-			</div>
-		);
-	}
-}
 
 class DisplaySondage extends React.Component {
 	render() {

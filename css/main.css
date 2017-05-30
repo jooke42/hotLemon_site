@@ -14,23 +14,7 @@ body{
     background-attachment: fixed;
 }
 
-#footer {
-	background:#ffcc80;
-	font-family: "Trebuchet MS";
-	color: white;
-	text-align : center;	
-	width:100%;
-	padding:10px;
-	height:25px;
-	position:fixed;
-	bottom:0;
-	left:0;
-}
 
-#footer > a{
-	text-decoration:none;
-	color: white;
-}
 
 /* ============================== */
 /* ======= NAVIGATION BAR ======= */
@@ -42,8 +26,18 @@ body{
 	font-weight : bold;
 }
 
-.navbar #buttons{	
+.navbar #barre-boutons{	
+	background-color: #ffff99;
+}
+
+.navbar #buttons{
+	margin: 0 auto;
 	position:relative;
+	width: 60%;
+}
+
+.navbar #buttons li{	
+	text-transform: uppercase;
 }
 
 .navbar ul{	
@@ -54,7 +48,7 @@ body{
 }
 
 .navbar li{
-	float:left;
+	display: inline-block;
 }
 
 .navbar li a{
@@ -84,7 +78,6 @@ body{
 /* Container des différents blocs */
 
 .feed{
-	z-index: -1;
 	display:block;
 	margin-left: auto;
 	margin-right: auto;
@@ -97,10 +90,6 @@ body{
 	display: block;
 	color: white;
 	border: 1px solid;
-}
-#test
-{
-    background:url('chat_default.jpeg');
 }
 
 
@@ -135,30 +124,6 @@ body{
 	background-color: purple;
 	opacity:0.7;
 	color: white;	
-}
-
-/* ============ BLOC EVENT =========== */
-
-.evenement{
-	float: left;
-	font-family: "Arial";
-	width:300px;
-	height: 250px;
-	background-color : #d7f4e6;
-	padding:10px;
-	margin: 10px;
-	overflow:hidden;
-}
-
-.evenement > h2{
-	font-family: "Trebuchet MS";
-	color: #00bc61;
-}
-
-.evenement:hover{
-	filter:brightness(110%);
-	cursor:pointer;
-	transition: all 1s;
 }
 
 
@@ -266,42 +231,6 @@ body{
 	padding: 4px;
 }
 
-/* ============ EVENT =========== */
-
-.createevent {
-	display: block;
-	position: absolute;
-	left: 200px;
-	width: 400px;
-	margin: auto;
-	padding: 10px;
-	background-color: #00a651;
-	font-family: "Trebuchet MS";
-	border: solid 2px black;
-}
-
-.createevent > h2 {
-	text-align: center;
-	color: white;
-}
-
-.createevent > textarea {
-	font-family:"Trebuchet MS";
-	max-width: 300px;
-}
-
-.createevent #sendevent {
-	display: inline-block;
-	width: 50%;
-	background-color:white;
-	text-align: center;
-	color: black;	
-}
-
-.createevent #sendevent:hover {
-	cursor: pointer;
-	background-color: yellow;
-}
 
 /* =========== SONDAGE ========== */
 
@@ -389,9 +318,24 @@ body{
 }
 
 
-/* ============ EVENT =========== */
+/* ============================== */
+/* =========== FOOTER =========== */
+/* ============================== */
 
+#footer {
+	background:#ffcc80;
+	font-family: "Trebuchet MS";
+	color: white;
+	text-align : center;	
+	width:100%;
+	padding:10px;
+	height:25px;
+	position:fixed;
+	bottom:0;
+	left:0;
+}
 
-
-
-/* =========== SONDAGE ========== */
+#footer > a{
+	text-decoration:none;
+	color: white;
+}
