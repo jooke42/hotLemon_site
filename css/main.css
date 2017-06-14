@@ -5,15 +5,14 @@ html{
 body{
 	height: 100%;
     margin: 0;
-	background: #00a651; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#00a651, white); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#00a651, white); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#00a651, white); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#00a651, white); /* Standard syntax (must be last) */
+	background: #56f7a4; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#00a651, white); /* Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#00a651, white); /* Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#00a651, white); /* Firefox 3.6 to 15 */
+    background: linear-gradient(#00a651, white); /* Standard */
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
 
 
 /* ============================== */
@@ -21,19 +20,24 @@ body{
 /* ============================== */
 
 .navbar{
-	font-family: "Trebuchet MS";
-	font-size: 12px;
+	position: relative;
+	display: block;	
+	height: 150px;
+	font-family: Trebuchet MS, serif;
+	font-size: 14px;
 	font-weight : bold;
-}
-
-.navbar #barre-boutons{	
-	background-color: #ffff99;
+	}
+	
+.navbar #content-navbar{
+	margin-left : 15%;
+	margin-right : 15%;
+	margin-top: 50px;
 }
 
 .navbar #buttons{
-	margin: 0 auto;
-	position:relative;
+	float: left;
 	width: 60%;
+	padding: 30px;
 }
 
 .navbar #buttons li{	
@@ -43,8 +47,6 @@ body{
 .navbar ul{	
 	list-style-type: none;
 	overflow: hidden;
-	background-color: #ffff99;
-	margin:auto;
 }
 
 .navbar li{
@@ -54,34 +56,59 @@ body{
 .navbar li a{
 	display: block;
 	margin: 25px;
-	color: black;
+	color: #ffffff;
 	text-align:center;
 	text-decoration: none;
+	
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
 }
 
-.navbar li a:hover{
-	color:#009933;
+.navbar li a:hover, .navbar li a:focus, .navbar li a:active{
+	color:#f5df22;
+	-webkit-transform: scale(1.4);
+	transform: scale(1.4);
 }
 
 .navbar img{
+	display: inline-block;
 	position:relative;
-	display:block;
-	margin:0 auto;
-	padding: 25px;
+	float: left;
+	margin-left: 20px;	
+	
+	-webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
 }
 
+.navbar img:hover {
+	cursor: pointer;
+	-webkit-transform: scale(1.1) rotate(-5deg);
+  transform: scale(1.1) rotate(-5deg);
+}
 
 
 /* ============================== */
 /* ============ FEED ============ */
 /* ============================== */
-/* Container des différents blocs */
+/* Container des articles */
 
 .feed{
-	display:block;
+	position : relative;
+	padding: 50px;
+	margin : 30px;
+	width : 80%;	
 	margin-left: auto;
 	margin-right: auto;
-	padding:15px;
+	padding:25px;
 	text-align:center;
 }
 
@@ -89,21 +116,33 @@ body{
 	font-family:"Trebuchet MS";
 	display: block;
 	color: white;
-	border: 1px solid;
 }
 
+.feed .article{
+	padding: 10px;
+	margin : 10px;
+}
 
 /* =========== BLOC ARTICLE ========== */
 
 .article{
+	border-radius: 15px;
 	font-family: "Arial";
 	float: left;
-	width:300px;
-	height: 250px;
-	background-color: #ffe6f3;
-	padding:10px;
-	margin: 10px;
+	width:200px;
+	height: 200px;
+	background-color: #ffffff;
+	padding:15px;
+	margin-left: 10px;
+	margin-right: 10px;
 	overflow:hidden;
+	line-height: 7px;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
 }
 
 .article > h2{
@@ -111,19 +150,29 @@ body{
 	color: #cc1294;
 }
 
-.article:hover{
+.article > p{
+	font-family: "Arial";
+	font-size: 10px;
+	line-height: 11px;
+}
+
+.article:hover, .article:focus, .article:active{
 	filter:brightness(110%);
 	cursor:pointer;
-	transition: all 1s;
+	transition: all 0.3s;
+	
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
 }
 
 .article #footerarticle{
-	width: 300px;
+
+	width: 100%;
 	height:  50px;
 	display: inline-block;
 	background-color: purple;
 	opacity:0.7;
-	color: white;	
+	color: white;
 }
 
 
@@ -185,6 +234,7 @@ body{
 /* =========== Article ========== */
 
 .createarticle {
+	z-index:2;
 	display: block;
 	position: absolute;
 	width: 400px;
@@ -323,13 +373,14 @@ body{
 /* ============================== */
 
 #footer {
-	background:#ffcc80;
+	background:#7ae08f;
 	font-family: "Trebuchet MS";
+	font-size: 12px;
 	color: white;
 	text-align : center;	
 	width:100%;
 	padding:10px;
-	height:25px;
+	height:20px;
 	position:fixed;
 	bottom:0;
 	left:0;

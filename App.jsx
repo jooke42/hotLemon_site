@@ -17,51 +17,69 @@ bandeau page d'accueil
 
 import React from 'react';
 
-{/* class App extends React.Component {
-   render() {
-      return (
-		<div id = "grad">	
-			<NavBar/>
-			<Feed/> 
-			
-			
-			<DisplayArticle/>
-			<CreateArticle/>
-			<CreateEvent/>
-			<CreateSondage/>
-			
-			
-			
-		</div>
-      );
-   }
-}
-*/}
 
 class App extends React.Component {
 	constructor(props){
-		super(props);
-		
-		this.state = {
-			title: "Title sample",
-			author: "Author name",
-			body: "Body sample",
-			published_date: "le XX/XX/XXXX",
-			finished_date: "XX/XX/XXXX",
-			vote_for: "Like",
-			vote_against: "Dislike",
-			place: "Default location",
-			tag: "Catégorie"
-		}
+		super(props);			
 	}
 	
 	render() {
 		return(
 			<div id = "grad">
 				<NavBar/>
-				<Feed				
-					tagProp = {this.state.tag}
-				/>
+				<Feed/>								
+			</div>
+		);
+	}
+}
+
+class NavBar extends React.Component {
+   render() {
+      return (
+		<div className = "navbar">
+			<div id = "content-navbar">
+				<div id ="logo">
+					<img src="img\HotLemon_Logo2.png"/>
+				</div>
+				<div id = "barre-boutons">
+					<div id = "buttons">
+						<ul>
+							<li><a href="#">Société</a></li>
+							<li><a href="#">Sport</a></li>
+							<li><a href="#">Santé</a></li>
+							<li><a href="#">Culture</a></li>
+							<li><a href="#">Science</a></li>
+							<li><a href="#">écrire</a></li>
+						</ul>
+					</div>	
+				</div>
+			</div>
+		</div>
+      );
+   }
+}
+
+
+
+/* Le feed est le container des news */
+class Feed extends React.Component{
+	constructor(props){
+		super(props);
+		
+		this.state = {
+			title: "Title sample",
+			author: "Author name",
+			body: "Simple body sample with big length to show if it is ok to write so much things",
+			published_date: "le XX/XX/XXXX",
+			finished_date: "XX/XX/XXXX",
+			vote_for: "Like",
+			vote_against: "Dislike",
+			place: "Default location",
+		}
+	}
+	render() {
+		return (			
+			<div className = "feed">
 				<Article 
 					titleProp = {this.state.title} 
 					authorProp = {this.state.author} 
@@ -76,48 +94,21 @@ class App extends React.Component {
 				<Article/>
 				<Article/>
 				<Article/>
+				<Article/>	
+				<Article/>	
 				<Article/>
-				
-				
-			</div>
-		);
-	}
-}
-
-class NavBar extends React.Component {
-   render() {
-      return (
-		<div className = "navbar">
-			<div id ="logo">
-				<img src="img\HotLemon_Logo.png"/>
-			</div>
-			<div id = "barre-boutons">
-				<div id = "buttons">
-					<ul>
-						<li><a href="#">Actualité</a></li>
-						<li><a href="#">Sport</a></li>
-						<li><a href="#">Santé</a></li>
-						<li><a href="#">Culture</a></li>
-						<li><a href="#">écologie</a></li>
-						<li><a href="#">Science</a></li>
-						<li><a href="#">étudiants</a></li>
-						<li><a href="#"><b>écrire</b></a></li>
-					</ul>
-				</div>	
-			</div>
-		</div>
-      );
-   }
-}
-
-
-
-/* Le feed est le container des news */
-class Feed extends React.Component{
-	render() {
-		return (			
-			<div className = "feed">
-				<h2>{this.props.tagProp}</h2> {/*  Catégorie actuelle */}			
+				<Article/>
+				<Article/>
+				<Article/>
+				<Article/>	
+				<Article/>	
+				<Article/>
+				<Article/>	
+				<Article/>	
+				<Article/>
+				<Article/>	
+				<Article/>	
+				<Article/>				
 			</div>
 		);
 	}
