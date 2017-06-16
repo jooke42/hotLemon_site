@@ -39,17 +39,16 @@ class NavBar extends React.Component {
 		<div className = "navbar">
 			<div id = "content-navbar">
 				<div id ="logo">
-					<img src="img\HotLemon_Logo2.png"/>
+					<a href="index.html"><img src="img\HotLemon_Logo2.png"/></a>
 				</div>
 				<div id = "barre-boutons">
 					<div id = "buttons">
 						<ul>
-							<li><a href="#">Société</a></li>
-							<li><a href="#">Sport</a></li>
-							<li><a href="#">Santé</a></li>
-							<li><a href="#">Culture</a></li>
-							<li><a href="#">Science</a></li>
-							<li><a href="#">écrire</a></li>
+							<li><a href="accueil.html">Accueil</a></li>
+							<li><a href="exemple.html">Exemple</a></li>
+							<li><a href="faq.html">FAQ</a></li>
+							<li><a href="who.html">Qui sommes-nous ?</a></li>
+							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</div>	
 				</div>
@@ -58,7 +57,6 @@ class NavBar extends React.Component {
       );
    }
 }
-
 
 
 /* Le feed est le container des news */
@@ -90,6 +88,7 @@ class Feed extends React.Component{
 					vote_againstProp = {this.state.vote_against}
 					placeProp = {this.state.place}
 				/>
+				{/* Pour tester : */}
 				<Article/>
 				<Article/>
 				<Article/>
