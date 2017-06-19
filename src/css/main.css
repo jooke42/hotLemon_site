@@ -428,3 +428,17 @@ body{
 	text-decoration:none;
 	color: white;
 }
+#connexion_div{
+	float:right;
+	border-radius: 15px;
+	font-family: "Arial";
+	float: right;
+	width:150px;
+	height: 100%;
+	background-color: #ffffff;
+	padding:15px;
+	margin-left: 10px;
+	margin-right: 10px;
+	line-height: 7px;
+
+}

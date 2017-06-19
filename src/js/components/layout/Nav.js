@@ -1,5 +1,6 @@
 import React from "react";
 import { IndexLink, Link } from "react-router";
+import Connexion from "../Connexion";
 
 export default class Nav extends React.Component {
   constructor() {
@@ -35,6 +36,7 @@ export default class Nav extends React.Component {
             </ul>
               </div>
           </div>
+          <Connexion/>
         </div>
       </nav>
     );

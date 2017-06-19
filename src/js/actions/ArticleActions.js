@@ -16,12 +16,12 @@ export function deleteArticle(id) {
 }
 
 export function reloadArticles() {
-    const authstr = "Token f1bd6d809de49296113277d757d534cd5ba3bf12";
+    const authstr = "Token "+ localStorage.getItem("@hotlemon:key");
     console.log('fetching data ....');
     dispatcher.dispatch({type: "FETCH_ARTICLES"});
-    axios.get("http://82.232.20.224/users/", { 'headers': { 'Authorization': authstr }})
+
+    axios.get("http://82.232.20.224/news/", { 'headers': { 'Authorization': authstr }})
         .then(response =>{
-            console.log(response.data);
             dispatcher.dispatch({type: "RECEIVE_ARTICLES", articles: response.data.results}
             );
 

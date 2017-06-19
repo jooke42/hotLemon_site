@@ -23,7 +23,7 @@ module.exports = {
         path: __dirname + "/src/",
         filename: "main.min.js"
     },
-    plugins: debug ? [] : [
+    plugins: !debug ? [] : [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
