@@ -12,6 +12,7 @@ export default class Articles extends React.Component {
     this.state = {
       articles: StoreArticle.getAll()
     };
+    this.reloadArticles();
   }
 
     componentWillMount() {
@@ -28,7 +29,7 @@ export default class Articles extends React.Component {
 
     getArticles() {
         this.setState({
-            todos: ArticleStore.getAll(),
+            articles: ArticleStore.getAll(),
         });
     }
 

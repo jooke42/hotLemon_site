@@ -1,4 +1,5 @@
 import dispatcher from "../dispatcher";
+import axios from "axios";
 
 export function createArticle(text) {
   dispatcher.dispatch({
@@ -15,41 +16,17 @@ export function deleteArticle(id) {
 }
 
 export function reloadArticles() {
-  // axios("http://someurl.com/somedataendpoint").then((data) => {
-  //   console.log("got the data!", data);
-  // })
-  dispatcher.dispatch({type: "FETCH_ARTICLES"});
-  setTimeout(() => {
-    console.log("Fetch article list please wait ...");
-    dispatcher.dispatch({type: "RECEIVE_ARTICLES", articles: [
-        {
-            id: 113464613,
-            title: "Title sample",
-            author: "Author name",
-            body: "Simple body sample with big length to show if it is ok to write so much things",
-            published_date: "le XX/XX/XXXX",
-            finished_date: "XX/XX/XXXX",
-            vote_for: "Like",
-            vote_against: "Dislike",
-            place: "Default location",
+    const authstr = "Token f1bd6d809de49296113277d757d534cd5ba3bf12";
+    console.log('fetching data ....');
+    dispatcher.dispatch({type: "FETCH_ARTICLES"});
+    axios.get("http://82.232.20.224/users/", { 'headers': { 'Authorization': authstr }})
+        .then(response =>{
+            console.log(response.data);
+            dispatcher.dispatch({type: "RECEIVE_ARTICLES", articles: response.data.results}
+            );
 
+        }).catch(error => {
+                console.log(error);
+        })
 
-
-        },
-        {
-            id: 113464614,
-            title: "Title sample2",
-            author: "Author name2",
-            body: "Simple body sample with big length to show if it is ok to write so much things2",
-            published_date: "le XX/XX/XXXX",
-            finished_date: "XX/XX/XXXX",
-            vote_for: "Like",
-            vote_against: "Dislike",
-            place: "Default location",
-
-
-
-        },
-    ]});
-  }, 1000);
 }

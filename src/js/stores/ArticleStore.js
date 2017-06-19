@@ -10,6 +10,7 @@ class ArticleStore extends EventEmitter {
     getAll() {
         return this.articles;
     }
+
     handleActions(action) {
         switch(action.type) {
             case "CREATE_ARTICLE": {
@@ -18,6 +19,7 @@ class ArticleStore extends EventEmitter {
             }
             case "RECEIVE_ARTICLES": {
                 console.log("article list has been received !");
+                console.log(action.articles);
                 this.articles = action.articles;
                 this.emit("change");
                 break;
