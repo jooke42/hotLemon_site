@@ -22,23 +22,26 @@ export default class Nav extends React.Component {
     const navClass = collapsed ? "collapse" : "";
 
     return (
-      <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div className="container" id="content-navbar">
-          <div id ="logo">
-            <a href="index.html"><img src="img\HotLemon_Logo2.png"/></a>
-          </div>
-          <div className={"navbar-collapse " + navClass} id = "barre-boutons">
-              <div id = "buttons">
-            <ul className="nav navbar-nav">
-              <li className={featuredClass}>
-                <IndexLink to="/" onClick={this.toggleCollapse.bind(this)}>Articles</IndexLink>
-              </li>
-            </ul>
+        <div className="container">
+          <header id="fh5co-header" role="banner" className="navbar">
+            <div className="row">
+              <div className="col-md-10">
+                <img src="img\HotLemon_Logo2.png" href="index.html"/>
+
+                <ul >
+                  <li className={featuredClass}>
+                    <IndexLink to="/" onClick={this.toggleCollapse.bind(this)}>Articles</IndexLink>
+                  </li>
+                </ul>
               </div>
-          </div>
-          <Connexion/>
+              <div className="col-md-2">
+                <Connexion/>
+              </div>
+            </div>
+
+          </header>
         </div>
-      </nav>
+
     );
   }
 }

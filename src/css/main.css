@@ -77,7 +77,6 @@ body{
 
 .navbar #buttons{
 	float: left;
-	width: 60%;
 	padding: 30px;
 }
 
@@ -98,10 +97,8 @@ body{
 .navbar li a{
 	display: block;
 	margin: 25px;
-	color: #ffffff;
 	text-align:center;
 	text-decoration: none;
-	
 	-webkit-transform: perspective(1px) translateZ(0);
 	transform: perspective(1px) translateZ(0);
 	-webkit-transition-duration: 0.5s;
@@ -429,7 +426,6 @@ body{
 	color: white;
 }
 #connexion_div{
-	float:right;
 	border-radius: 15px;
 	font-family: "Arial";
 	float: right;

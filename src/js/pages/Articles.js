@@ -4,7 +4,7 @@ import Article from "../components/Article";
 import StoreArticle from "../stores/ArticleStore";
 import * as ArticleActions from "../actions/ArticleActions";
 import ArticleStore from "../stores/ArticleStore";
-
+import ConnexionStore from "../stores/ConnexionStore"
 export default class Articles extends React.Component {
   constructor() {
     super();
@@ -12,19 +12,16 @@ export default class Articles extends React.Component {
     this.state = {
       articles: StoreArticle.getAll()
     };
-    this.reloadArticles();
   }
 
     componentWillMount() {
         ArticleStore.on("change", this.getArticles);
-    }
-
-    componentWillMount() {
-        ArticleStore.on("change", this.getArticles);
+        ConnexionStore.on("change", this.getArticles);
     }
 
     componentWillUnmount() {
         ArticleStore.removeListener("change", this.getArticles);
+        ConnexionStore.removeListener("change", this.getArticles);
     }
 
     getArticles() {
@@ -45,10 +42,21 @@ export default class Articles extends React.Component {
     });
 
     return (
-      <div>
+        <div id="fh5co-main">
+            <div className="container">
+
+                <div className="row">
+
+                    <div id="fh5co-board" data-columns>
+                        <div>{ArticleComponents}</div>
+
+
+
+                    </div>
+                </div>
+            </div>
         <button onClick={this.reloadArticles.bind(this)}>Reload!</button>
-        <h1>Articles</h1>
-        <ul>{ArticleComponents}</ul>
+
       </div>
     );
   }

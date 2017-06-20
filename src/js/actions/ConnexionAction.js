@@ -4,8 +4,7 @@ import dispatcher from "../dispatcher";
 export function connexion(username,password){
     axios.post("http://82.232.20.224/rest-auth/login/",{'username':username,'password':password})
         .then(response =>{
-            console.log(response.data);
-            console.log(response.data.data);
+            console.log(response.data.key);
             dispatcher.dispatch({type: "RECEIVE_KEY_AUTH", key: response.data.key}
             );
 

@@ -3,16 +3,38 @@
  */
 import React from "react";
 import * as ConnexionAction from "../actions/ConnexionAction";
+import ConnexionStore from "../stores/ConnexionStore";
+
 export default class Connexion extends React.Component {
     constructor(props) {
         super(props);
         this.state = {username: '',password:''};
-
+        this.getKey = this.getKey.bind(this);
+        this.state = {
+            key: ConnexionStore.getKey()
+        };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit= this.handleSubmit.bind(this);
         this.handleDisconnection= this.handleDisconnection.bind(this);
 
     }
+
+
+    componentWillMount() {
+        ConnexionStore.on("change", this.getKey);
+    }
+
+    componentWillUnmount() {
+        ConnexionStore.removeListener("change", this.getKey);
+    }
+
+    getKey() {
+        this.setState({
+            key: ConnexionStore.getKey(),
+        });
+    }
+
+
 
     handleInputChange(event) {
         const target = event.target;
@@ -38,8 +60,8 @@ export default class Connexion extends React.Component {
     }
 
     render() {
-        let key =localStorage.getItem("@hotlemon:key");
-        if(key !== null ){
+
+        if(ConnexionStore.isConnected()){
             return <div id="connexion_div"> <h1>connected</h1><button onClick={this.handleDisconnection} >logout</button></div>
         }else{
             return (
