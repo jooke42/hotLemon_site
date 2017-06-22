@@ -40,24 +40,32 @@ export default class Articles extends React.Component {
     const ArticleComponents = articles.map((article) => {
         return <Article key={article.id} {...article}/>;
     });
+    let col1_max = Math.ceil((ArticleComponents.length/3));
+    let col2_max = Math.ceil((ArticleComponents.length/3)*2);
+    let cols = [];
+    cols.push(ArticleComponents.slice(0,col1_max));
+    cols.push(ArticleComponents.slice(col1_max+1,col2_max));
+    cols.push(ArticleComponents.slice(col2_max+1,(ArticleComponents.length)));
 
     return (
-        <div id="fh5co-main">
             <div className="container">
 
                 <div className="row">
-
+                    <button onClick={this.reloadArticles.bind(this)}>Reload!</button>
                     <div id="fh5co-board" data-columns>
-                        <div>{ArticleComponents}</div>
-
-
-
+                        <div className="column size-1of3">
+                            {cols[0]}
+                        </div>
+                        <div className="column size-1of3">
+                            {cols[1]}
+                        </div>
+                        <div className="column size-1of3">
+                            {cols[2]}
+                        </div>
                     </div>
                 </div>
             </div>
-        <button onClick={this.reloadArticles.bind(this)}>Reload!</button>
 
-      </div>
     );
   }
 }

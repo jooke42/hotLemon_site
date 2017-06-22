@@ -3,14 +3,25 @@ import React from "react";
 export default class Article extends React.Component {
   constructor(props) {
     super();
+      this.state = { imageStatus: 'loading' };
   }
+    handleImageLoaded() {
+        this.setState({ imageStatus: 'loaded' });
+    }
 
+    handleImageErrored() {
+        this.setState({ imageStatus: 'failed to load' });
+    }
+//className="animate-box"
   render() {
 
       return (
           <div className="item">
-              <div className="animate-box">
-                  <a href={this.props.picture} className="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?"><img src={this.props.picture} alt="Free HTML5 Bootstrap template"/></a>
+              <div >
+                  <img src={this.props.picture}
+                       onLoad={this.handleImageLoaded.bind(this)}
+                       onError={this.handleImageErrored.bind(this)}
+                       alt="Free HTML5 Bootstrap template"/>
               </div>
               <div className="fh5co-desc">
                   <h2>{this.props.title}</h2>

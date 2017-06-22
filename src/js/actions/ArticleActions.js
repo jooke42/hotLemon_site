@@ -20,8 +20,14 @@ export function reloadArticles() {
     console.log('fetching data ....');
     dispatcher.dispatch({type: "FETCH_ARTICLES"});
 
-    axios.get("http://82.232.20.224/news/", { 'headers': { 'Authorization': authstr }})
+    axios.get("http://82.232.20.224/topics/", { 'headers': { 'Authorization': authstr }})
         .then(response =>{
+            let articles = response.data.results;
+            articles.forEach();
+            axios.get("http://82.232.20.224/topics/", { 'headers': { 'Authorization': authstr }})
+                .then(responseAuthor  =>{
+
+                });
             dispatcher.dispatch({type: "RECEIVE_ARTICLES", articles: response.data.results}
             );
 
