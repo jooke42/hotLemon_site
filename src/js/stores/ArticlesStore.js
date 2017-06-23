@@ -24,6 +24,7 @@ class ArticleStore extends EventEmitter {
                 this.emit("change");
                 break;
             }
+
         }
     }
 

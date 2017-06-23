@@ -13,6 +13,7 @@ export function deleteArticle(id) {
     type: "DELETE_ARTICLE",
     id,
   });
+
 }
 
 export function reloadArticles() {
@@ -22,12 +23,6 @@ export function reloadArticles() {
 
     axios.get("http://82.232.20.224/topics/", { 'headers': { 'Authorization': authstr }})
         .then(response =>{
-            let articles = response.data.results;
-            articles.forEach();
-            axios.get("http://82.232.20.224/topics/", { 'headers': { 'Authorization': authstr }})
-                .then(responseAuthor  =>{
-
-                });
             dispatcher.dispatch({type: "RECEIVE_ARTICLES", articles: response.data.results}
             );
 

@@ -1,37 +1,36 @@
 import React from "react";
 
 import Article from "../components/Article";
-import StoreArticle from "../stores/ArticleStore";
-import * as ArticleActions from "../actions/ArticleActions";
-import ArticleStore from "../stores/ArticleStore";
-import ConnexionStore from "../stores/ConnexionStore"
+import ArticlesStore from "../stores/ArticlesStore";
+import * as ArticleAction from "../actions/ArticleActions";
+import ConnexionStore from "../stores/ConnexionStore";
 export default class Articles extends React.Component {
   constructor() {
     super();
     this.getArticles = this.getArticles.bind(this);
     this.state = {
-      articles: StoreArticle.getAll()
+      articles: []
     };
   }
 
     componentWillMount() {
-        ArticleStore.on("change", this.getArticles);
+        ArticlesStore.on("change", this.getArticles);
         ConnexionStore.on("change", this.getArticles);
     }
 
     componentWillUnmount() {
-        ArticleStore.removeListener("change", this.getArticles);
+        ArticlesStore.removeListener("change", this.getArticles);
         ConnexionStore.removeListener("change", this.getArticles);
     }
 
     getArticles() {
         this.setState({
-            articles: ArticleStore.getAll(),
+            articles: ArticlesStore.getAll(),
         });
     }
 
     reloadArticles() {
-        ArticleActions.reloadArticles();
+        ArticleAction.reloadArticles();
     }
 
     render() {
